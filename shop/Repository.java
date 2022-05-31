@@ -22,7 +22,7 @@ public class Repository {
     public void show(){
         // Su dung foreach
         //for(Product product : listProduct){
-        // System.out.println(product);
+        // System.out.println(products);
         //}
         //su dung lambda
         listProducts.forEach(product -> System.out.println(product));
