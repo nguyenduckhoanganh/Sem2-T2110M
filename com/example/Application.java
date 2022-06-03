@@ -1,6 +1,6 @@
 package com.example;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 import com.example.entity.Student;
@@ -70,7 +70,7 @@ public class Application {
         String name;
         System.out.println("Enter a name: ");
         name= input.next();
-        ArrayList<Student> found = list.findByName(name);
+        LinkedList<Student> found = list.findByName(name);
         list.showList(found);
     }
     public static void searchById(){

@@ -3,20 +3,20 @@ package com.example.model;
 
 import com.example.entity.Student;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
 public class StudentList {
-    private ArrayList<Student> list;
+    private LinkedList<Student> list;
     private int length;
 
-    public StudentList() {list = new ArrayList<Student>();}
+    public StudentList(){list = new LinkedList<Student>();}
 
-    public ArrayList<Student> findByName(String name) {
+    public LinkedList<Student> findByName(String name) {
         boolean found = false;
-        ArrayList<Student> matches = new ArrayList();
+        LinkedList<Student> matches = new LinkedList();
         for (Student s : list) {
             String fullName = new String(s.getFirstName() + "" + s.getLastName()).toLowerCase();
             if (fullName.matches("(.*)" + name.toLowerCase() + "(.*)")) {
@@ -43,7 +43,7 @@ public class StudentList {
                 for (Student s : list) {
                     if (s.getId() == id) {
                         int choice;
-                        System.out.println("Are you sure deleting this student?(1.Yes 2.No");
+                        System.out.println("Are you sure deleting this student?(1.Yes 2.No)");
                         choice = new Scanner(System.in).nextInt();
                         if (choice == 1)
                             list.remove(s);
@@ -65,7 +65,7 @@ public class StudentList {
                     s.printInfo();
                 }
             }
-            public void showList (ArrayList<Student>slist) {
+            public void showList (LinkedList<Student>slist) {
                 for (Student s:slist) {
                     s.printInfo();
                 }
