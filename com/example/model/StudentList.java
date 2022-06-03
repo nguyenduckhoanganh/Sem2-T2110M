@@ -9,8 +9,31 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class StudentList {
-    private LinkedList<Student> list;
+    private LinkedList<Student> list = new LinkedList<>() ;
     private int length;
+
+    public StudentList(){
+        list.add( new Student(1,"thanh","minh",10));
+        list.add( new Student(2,"hai","minh",0));
+        list.add( new Student(3,"hanh","tu",7));
+        list.add( new Student(4,"tung","minh",4));
+        list.add( new Student(5,"hai","tu",10));
+        list.add( new Student(6,"son","tung",5));
+        list.add( new Student(7,"ha","my",3));
+        list.add( new Student(8,"kien","anh",10));
+        list.add( new Student(9,"khong","thuong",8));
+        list.add( new Student(10,"anh","tu",10));
+        list.add( new Student(11,"thanh","minh",10));
+        list.add( new Student(12,"da","hai",5));
+        list.add( new Student(13,"anh","giang",1));
+        list.add( new Student(14,"yen","chi",9));
+        list.add( new Student(15,"linh","anh",6));
+        list.add( new Student(16,"ta","dat",8));
+        list.add( new Student(17,"hai","anh",6));
+        list.add( new Student(18,"le","lan",8));
+        list.add( new Student(19,"to","trang",10));
+        list.add( new Student(20,"thanh","binh",10));
+    }
 
     public StudentList(){list = new LinkedList<Student>();}
 
