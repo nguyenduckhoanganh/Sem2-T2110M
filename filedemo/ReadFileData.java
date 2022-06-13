@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
@@ -18,7 +19,7 @@ public class ReadFileData {
         }
 
     }
-    public void addEmployee(){
+    public void addEmployee() throws IOException {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhập ID :");
         int id = sc.nextInt();
@@ -47,6 +48,19 @@ public class ReadFileData {
         }
         Employee e = new Employee(id,name,email,role,manager);
         add(e);
+
+        Gson gson = new Gson();
+        FileWriter writer = new FileWriter("employee.json");
+        gson.toJson(employees1,writer);
+        writer.close();
+    }
+
+    public void removeEployee(int id) throws IOException {
+        Gson gson = new Gson();
+        employees1.remove(id);
+        FileWriter writer = new FileWriter("employee.json");
+        gson.toJson(employees1,writer);
+        writer.close();
     }
     public void add (Employee s){
         employees1.add(s);
@@ -61,8 +75,7 @@ public class ReadFileData {
         }
         reader.close();
     }
-
-    public void getEmployeeId () throws FileNotFoundException {
+    public void getEmployeeId () throws IOException {
         Scanner sc = new Scanner(System.in);
         Gson gson = new Gson();
 
@@ -76,6 +89,7 @@ public class ReadFileData {
                 System.out.println(c);
             }
         }
+        reader.close();
     }
 
     public void getEmployeeName () throws FileNotFoundException {
